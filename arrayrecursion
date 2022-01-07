@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+bool issorted(int a[],int size){
+if(size==0||size==1){
+    return true;
+}
+if(a[0]>a[1])
+{
+    return false;
+}
+int smallsorted=issorted(a+1,size-1);
+return smallsorted;
+
+}
+int main(){
+    int size;
+    cout<<"enter size of array";
+    cin>>size;
+int a[size];
+for(int i=0;i<size;i++){
+    cout<<"enter"<<i<<"element:";
+    cin>>a[i];
+    cout<<endl;
+}
+bool output=issorted(a,size);
+cout<<output;
+
+
+}
