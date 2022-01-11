@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+class node{
+    public:
+    int data;
+    node*next; // it will store the address of the next node
+    node(int data){
+    this->data=data;
+    next=NULL;
+    }
+
+    
+};
+
+
+
+
+
+
+#include<iostream>
+#include"nodeclass.cpp"
+using namespace std;
+int main(){
+// statically
+
+node n1(1);
+node*head=&n1; // head is created which will store the address of n1
+node n2(2);
+n1.next=&n2; // now both nodes n1 and n2 are connected
+cout<<n1.data<<" "<<n2.data<<endl;
+cout<<head->data; // accessing data (of n1)using head
+
+
+}
