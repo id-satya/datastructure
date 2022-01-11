@@ -1,0 +1,53 @@
+#include<iostream>
+#include"nodeclass.cpp"
+using namespace std;
+node print(node*head)
+{
+   node*temp=head; // we store the value of head in temp because we dont want to loose the value of our intial head
+
+  while(temp!=NULL){
+      cout<<temp->data;
+      temp=temp->next;
+  } 
+    
+}
+                                /*
+                               node print(node*head){
+                               while(head!=NULL){
+                              cout<<head->data;
+                               head=head->next;
+                              } 
+    
+                              } */
+int main(){
+// statically
+
+node n1(1);
+node*head=&n1; // head is created which will store the address of n1
+node n2(2);
+node n3(3);
+node n4(4);
+node n5(5);
+
+n1.next=&n2; // now both nodes n1 and n2 are connected
+n2.next=&n3;
+n3.next=&n4;
+n4.next=&n5;
+print(head);
+
+
+//cout<<head->data; // accessing data (of n1)using head
+
+
+
+
+/*
+// dynamically
+node*n3=new node(300);
+node*head=n3;
+node*n4=new node(400);
+n3->next=n4; // this will connect both node n3 and n4
+*/
+
+
+}
