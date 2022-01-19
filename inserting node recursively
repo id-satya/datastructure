@@ -1,0 +1,17 @@
+#include<iostream>
+#include"nodeclass.cpp"
+using namespace std;
+node*insertingnode(node*head,int i,int data){
+    if(head==NULL||i<0){
+        return;
+    }
+    if(i==0){
+        node*newnode=new node(data);
+        newnode->next=head;
+        head=newnode;
+        return head;
+    }
+   head->next= insertingnode(head->next,i-1,data);
+   return head;
+
+}
