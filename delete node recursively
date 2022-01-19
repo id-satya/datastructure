@@ -1,0 +1,19 @@
+#include<iostream>
+#include"nodeclass.cpp"
+using namespace std;
+node*deletenode(node*head,int i,int data){
+    if(head==NULL||i<0){
+        return;
+    }
+    if(i==0){
+        node*p=head->next;
+        head=p;
+        delete p;
+        return head;
+        
+    }
+    node*x=deletenode(head->next,i-1,data);
+    head->next=x;
+    x=head;
+    return head;
+}
